@@ -9,8 +9,9 @@
         }
       }
     ],
-    "stage-0", // Unstable and unrecommended, especially below stage 3
-    "react"
+    "stage-0",
+    "react",
+    "flow"
   ],
   "plugins": [
     [

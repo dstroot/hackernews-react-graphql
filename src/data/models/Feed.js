@@ -14,17 +14,14 @@ class Feed {
     switch (type) {
       case 'TOP':
         // In this app the HN data is reconstructed in-memory
-        return Promise.all(
-          this.top.slice(skip, first + skip)
-            .map(id => cache.getNewsItem(id) || HNDB.fetchNewsItem(id)));
+        return Promise.all(this.top.slice(skip, first + skip)
+          .map(id => cache.getNewsItem(id) || HNDB.fetchNewsItem(id)));
       case 'NEW':
-        return Promise.all(
-          this.new.slice(skip, first + skip)
-            .map(id => cache.getNewsItem(id) || HNDB.fetchNewsItem(id)));
+        return Promise.all(this.new.slice(skip, first + skip)
+          .map(id => cache.getNewsItem(id) || HNDB.fetchNewsItem(id)));
       case 'BEST':
-        return Promise.all(
-          this.best.slice(skip, first + skip)
-            .map(id => cache.getNewsItem(id) || HNDB.fetchNewsItem(id)));
+        return Promise.all(this.best.slice(skip, first + skip)
+          .map(id => cache.getNewsItem(id) || HNDB.fetchNewsItem(id)));
       case 'SHOW':
         return this.showNewsItems.slice(skip, first + skip);
       case 'ASK':
@@ -43,7 +40,7 @@ class Feed {
   show = [];
   ask = [];
   job = [];
-  
+
   /* A pre constructed cache of news feeds */
   topNewsItems = sampleData.topStoriesCache;
   newNewsItems = sampleData.topStoriesCache;

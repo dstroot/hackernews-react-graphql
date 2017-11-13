@@ -41,7 +41,12 @@ export default class NewsItem {
 
   static hideNewsItem = (id, userId) => DB.hideNewsItem(id, userId);
 
-  static submitNewsItem = ({ submitterId, title, text, url }) => {
+  static submitNewsItem = ({
+    submitterId,
+    title,
+    text,
+    url,
+  }) => {
     const newsItem = new NewsItem({
       id: (newPostIdCounter += 1),
       submitterId,
